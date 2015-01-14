@@ -1,10 +1,6 @@
-//
 // APS105-F12 Lab 8 Lab8.c
-//
 // Program for maintaining a bookstore inventory.
-//
 // Uses a linked list to hold the books.
-//
 // Author: Shengyuan Guo
 
 
@@ -17,10 +13,6 @@
 // Linked List Definitions
 //  Define your linked list node and pointer types
 //  here for use throughout the file.
-//
-//
-//
-//   ADD STATEMENT(S) HERE
 typedef struct book
 {
     char* name;

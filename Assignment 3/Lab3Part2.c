@@ -1,3 +1,9 @@
+//Lab #3
+//Shengyuan Guo
+//1/10/2012
+/* This program determines whether a given substance is water, mercury,
+gold, silver or copper when given the threshold temperature and the boiling point.*/ 
+
 #include <stdio.h>
 
 int main()

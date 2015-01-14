@@ -1,5 +1,10 @@
 #include <stdio.h>
 #include <math.h>
+//Lab #3
+//Shengyuan Guo
+//1/10/2012
+/* This program determines which quadrant of the coordinate plane,
+ a given point is in or indicates if the point is at the origin.*/ 
 int main()
 {
     float x, y, rx,ry;

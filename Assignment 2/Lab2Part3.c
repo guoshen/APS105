@@ -1,6 +1,5 @@
 //Lab #2: Programs That Calculate
 //Shengyuan Guo
-//Student Number:999867130
 //21/09/2012
 /* This program is a loan calculator which helps determine your monthly payment
 amount.*/ 

@@ -1,6 +1,5 @@
 //Lab #6: Mastermind Fall 2012
 //Shengyuan Guo
-//Student Number:999867130
 //November 3,2012
 /* A program that plays a game of Mastermind*/
 #include <stdio.h>

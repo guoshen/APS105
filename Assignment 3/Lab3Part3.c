@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <math.h>
-
+//Lab #3
+//Shengyuan Guo
+//1/10/2012
+/* Indicates the BMI and assesses the weight profile of a person given 
+height and weight*/
 int main()
 {
     double weight=0, height=0, bmi=0,BMI=0, kg=0, m=0;

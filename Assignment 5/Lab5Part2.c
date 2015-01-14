@@ -1,7 +1,10 @@
 #include <stdio.h>
 #include <stdbool.h>
-
-
+//Lab #5: Functions
+//Shengyuan Guo
+//26/10/2012
+/* This program allows user to play a game of dice. (Luck based on random number generators in C). 
+*/
 
 
 int rollDice()
