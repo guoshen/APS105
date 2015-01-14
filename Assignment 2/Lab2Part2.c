@@ -1,6 +1,5 @@
 //Lab #2: Programs That Calculate
 //Shengyuan Guo
-//Student Number:999867130
 //21/09/2012
 /* When given an encrypted combination, this program outputs the actual
 combination.*/ 
