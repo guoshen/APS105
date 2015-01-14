@@ -1,6 +1,5 @@
 //Lab #2: Programs That Calculate
 //Shengyuan Guo
-//Student Number:999867130
 //21/09/2012
 /* This program calculates the cost of car rentals days and the number of free
  days offered, when given the daily rate and the rental period.*/ 
