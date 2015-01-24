@@ -2,6 +2,7 @@
 //Shengyuan Guo
 //November 3,2012
 /* A program that plays a game of Mastermind*/
+
 #include <stdio.h>
 #include <stdbool.h>
 
@@ -14,17 +15,20 @@ int main()
 
     int score;
     int lenGuess;
-	char key[l];
-    char g[lenGuess][l];
-    char r[lenGuess][l];
+
+
     printf("Enter the pattern length: ");
     scanf("%d",&l);
     printf ("Enter the number of guesses: ");
     scanf("%d",&lenGuess);
-    
+    char key[l];
+     char g[lenGuess][l];
+    char r[lenGuess][l];
+
 
     printf("Input the key pattern with no spaces: ");
     scanf ("%s",key);
+
     score=0;
 
  for (k=0;k<lenGuess && score==0;k++)
