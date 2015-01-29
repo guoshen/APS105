@@ -1,6 +1,7 @@
 // APS105-F12 Lab 8 Lab8.c
-// Program for maintaining a bookstore inventory.
-// Uses a linked list to hold the books.
+// This program maintains a bookstore inventory database using linked lists.
+// The user may add books to database, search by name/rating, list all the books in database
+//and delete books.
 // Author: Shengyuan Guo
 
 
@@ -11,31 +12,25 @@
 
 //**********************************************************************
 // Linked List Definitions
-//  Define your linked list node and pointer types
-//  here for use throughout the file.
+
 typedef struct book
 {
     char* name;
     char* author;
     int rating;
     char category;
-}Book;
+} Book;
 
 
 typedef struct node
 {
     Book book;
     struct node* next;
-}Node;
+} Node;
 
 
 //**********************************************************************
 // Linked List Function Declarations
-//
-// Functions that modify the linked list.
-//   Declare your linked list functions here.
-//
-//   ADD STATEMENT(S) HERE
 
 Node * insertBook (Node *head);
 Node * deleteBook (Node *head);
@@ -87,7 +82,6 @@ int main (void)
           "  V (search by rating), P (print), Q (quit).\n";
 
     // Declare linked list head.
-    //   ADD STATEMENT(S) HERE TO DECLARE LINKED LIST HEAD.
     Node *head=NULL;
 
 
@@ -108,12 +102,7 @@ int main (void)
         if (response == 'I')
         {
             // Insert a book entry into the linked list.
-            // Maintain the list in correct order (F, H, P, A).
-            //   ADD STATEMENT(S) HERE
-
-
-            // USE THE FOLLOWING PRINTF STATEMENTS WHEN PROMPTING FOR DATA:
-
+            // Maintain the list in correct order (F, H, P, A);
             head=insertBook(head);
 
         }
@@ -122,35 +111,25 @@ int main (void)
             // Delete a book from the list.
 
             printf("\nEnter the book name to delete: ");
-
-            //   ADD STATEMENT(S) HERE
             head=deleteBook(head);
 
         }
         else if (response == 'S')
         {
             // Search for a book by a name.
-
             printf("\nEnter the book name to search for: ");
-
-
-            //   ADD STATEMENT(S) HERE
             searchListbyName(head);
         }
         else if (response == 'V')
         {
             // Search for books that are rated higher than or equal to a rating.
-
             printf("\nEnter rating: ");
-
-            //   ADD STATEMENT(S) HERE
             searchListbyRating(head);
 
         }
         else if (response == 'P')
         {
             // Print the bookstore inventory.
-                        //   ADD STATEMENT(S) HERE
             printList(head);
 
 
@@ -164,15 +143,14 @@ int main (void)
             // do this if no command matched ...
             printf("\nInvalid command.\n%s\n", commandList);
         }
-    } while (response != 'Q');
+    }
+    while (response != 'Q');
 
     // Delete the entire linked list that hold the bookstore inventory.
-    //   ADD STATEMENT(S) HERE
     head=deleteAll(head);
 
 
     // Print the linked list to confirm deletion.
-    //   ADD STATEMENT(S) HERE
     printList(head);
 
     return 0;
@@ -206,14 +184,14 @@ void bookNameDuplicate (char bookName[])
 void bookNameFound (char bookName[])
 {
     printf("\nThe book with name <%s> was found in the bookstore inventory.\n",
-             bookName);
+           bookName);
 }
 
 // Function to call when a book with this name was not found in the inventory.
 void bookNameNotFound (char bookName[])
 {
     printf("\nThe book with name <%s> is not in the bookstore inventory.\n",
-             bookName);
+           bookName);
 }
 
 // Function to call when a name that is to be deleted
@@ -221,7 +199,7 @@ void bookNameNotFound (char bookName[])
 void bookNameDeleted (char bookName[])
 {
     printf("\nDeleting book with name <%s> from the bookstore inventory.\n",
-             bookName);
+           bookName);
 }
 
 // Function to call when printing an empty bookstore inventory.
@@ -240,12 +218,10 @@ void printInventoryTitle (void)
 // or equal rating to the given rating
 void printNoBooksWithHigherRating (int rating)
 {
-	printf("\nNo book(s) in the bookstore inventory is rated higher than or equal to <%d>.\n", rating);
+    printf("\nNo book(s) in the bookstore inventory is rated higher than or equal to <%d>.\n", rating);
 }
 
 //**********************************************************************
-// Add your functions below this line.
-
 Book  inputBook()
 {
     char input[MAX_LENGTH +1];
@@ -321,7 +297,8 @@ Node * insertBook (Node *head)
         head=newNode;
         check=1;
     }
-    else{
+    else
+    {
         while (temp->next!=NULL && check==0)
         {
             if (getCategoryID(temp->next->book.category)>getCategoryID(newNode->book.category))
@@ -333,7 +310,7 @@ Node * insertBook (Node *head)
 
         temp->next=newNode;
 
-        }
+    }
     return head;
 
 }
@@ -372,7 +349,7 @@ Node * deleteBook (Node *head)
             check=1;
             temp2= temp->next;
 
-            temp->next = temp2->next;  // no problem to remove tail
+            temp->next = temp2->next;
 
             temp2->next = NULL;
             free(temp2->book.name);
@@ -394,11 +371,12 @@ Node * deleteBook (Node *head)
         bookNameNotFound(str);
     }
 
-return head;
+    return head;
 
 }
 void   printList (Node *head)
-{   Node *temp;
+{
+    Node *temp;
     temp=head;
 
     if (temp==NULL)
@@ -430,9 +408,6 @@ void   searchListbyName (Node *head)
     char input[MAX_LENGTH+1];
     char *str;
     int check=0;
-
-    //printf("\nEnter the book name to search for: ");
-
     safegets(input,MAX_LENGTH+1);
 
     str=getString(input);
@@ -463,52 +438,49 @@ void   searchListbyName (Node *head)
 
 
 }
-void   searchListbyRating(Node *head)
+void searchListbyRating(Node *head)
 {
 
-Node *temp;
-temp=head;
-int rating;
-char input[MAX_LENGTH+1];
+    Node *temp;
+    temp=head;
+    int rating;
+    char input[MAX_LENGTH+1];
 
-safegets(input, MAX_LENGTH + 1);
-rating=toInt(input);
+    safegets(input, MAX_LENGTH + 1);
+    rating=toInt(input);
 
 
-int check=0;
-while (temp!=NULL)
-{
-    if(temp->book.rating>=rating)
+    int check=0;
+    while (temp!=NULL)
     {
-        printBook(temp->book);
-        printf("\n");
-        check=1;
+        if(temp->book.rating>=rating)
+        {
+            printBook(temp->book);
+            printf("\n");
+            check=1;
+        }
+        temp=temp->next;
     }
-    temp=temp->next;
-}
 
-if(check==0)
-{
-    printNoBooksWithHigherRating(rating);
-}
-
-
-
+    if(check==0)
+    {
+        printNoBooksWithHigherRating(rating);
+    }
 }
 
 Node *deleteAll(Node *head)
 {
- Node * temp;
- while (head!=NULL)
- {
-  temp=head;  // keep the pointer to it so it can be free
-  head=temp->next; //move head to the next one
-  temp->next=NULL; // cut the link
-  free(temp->book.name);
-  free(temp->book.author);
-  free(temp);
- }
- return NULL;
+    Node * temp;
+    while (head!=NULL)
+    {
+        temp=head;
+        head=temp->next;
+        temp->next=NULL;
+        free(temp->book.name);
+        free(temp->book.author);
+        free(temp);
+    }
+    return NULL;
 }
 
 
@@ -541,7 +513,7 @@ char *getString(char *str)
     strcpy(dest, str);
     return dest;
 }
-//print Book
+
 void printBook(Book book)
 {
     printf("\n%s", book.name);

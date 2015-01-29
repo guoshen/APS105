@@ -1,7 +1,10 @@
 //Lab #6: Mastermind Fall 2012
 //Shengyuan Guo
 //November 3,2012
-/* A program that plays a game of Mastermind*/
+/* A program that plays the classic game of Mastermind board game on the computer.
+2 player game: Where one player enters a pattern(sequence of characters from 'a-f'). The other player tries to guess the exact pattern. 
+The computer provides feedback on the accuracy of each guess(correct characters and positions of characters). The game objective is to 
+guess the correct pattern within the maximum number of guesses. */
 
 #include <stdio.h>
 #include <stdbool.h>

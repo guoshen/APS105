@@ -1,9 +1,10 @@
 //Lab #7: The Mastermind Assistant (Recursion)
 //Shengyuan Guo
 //November 12,2012
-/* A program that asks the user to input a guess pattern,
-the number of white and black pegs. The program then prints out all the
-combinations of keys for the case using letters from a-f */
+/*The program prompts the user to enter a guess pattern(using characters from 'a-f') for a game of Mastermind.
+The program asks the user to specify the number of black and white pegs that result from this guess.
+The program then determines all the following guess patterns that are possible from this 
+result.*/
 #include <stdio.h>
 #include <stdbool.h>
 
