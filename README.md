@@ -7,13 +7,13 @@ recursion, and linked lists.
 
 Labs Include:
 
-* Lab 6: Mastermind:
+* <b>Lab 6-Mastermind</b>:
 An implementation of a 2-player game of Mastermind. It is code-breaking game where one player tries to guess a code(sequence of characters) set by the other player, with a limited number of guesses.
 
-* Lab 7: Mastermind Helper:
+* <b>Lab 7-Mastermind Helper</b>:
 Given a set of conditions, the program prints out all the possible valid guesses for a game of Mastermind.
 
-* Lab 8: Bookstore Inventory:
+* <b>Lab 8-Bookstore Inventory</b>:
 A bookstore inventory management program, with a database implemented using linked lists. The program allows the user to add, delete, search books.
 
 Note: I did not do extensive error handling in all these programs. 
