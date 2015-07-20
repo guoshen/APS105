@@ -3,7 +3,9 @@
 > APS105 is a course which introduced the concepts of the C programming language to me. 
 > These labs span a variety of fundamental concepts including: string manipulation, arithmetic, pointers, dynamic memory management, 
 > recursion, and linked lists.
+
 **Technologies Used:** C 
+
 **Labs Include**:
 
 * <b>Lab 6-Mastermind</b>:
